@@ -1,0 +1,28 @@
+<html>
+<body>
+this is a test!<br>
+#set($title ="nowcoder")
+Include: #include("header.vm")<br>
+Parse:#parse("header.vm")<br>
+$!{value1}<br>
+${value2}<br>
+#foreach($color in $colors)
+    Colors ${foreach.index}:${color}<br>
+#end
+#foreach($entry in $map.entrySet())
+    Map:key:$entry.key value:$entry.value<br>
+#end
+#foreach($k in $map.keySet())
+    MapFomat $foreach.count:key:$k  value:$map.get($k)<br>
+#end
+#if($!{user})
+    $user.name<br>
+#end
+#macro(rend_color,$color,$index)
+    Color By Macro $index $color
+#end
+#foreach($color in $colors)
+    #rend_color($color,$foreach.index)
+#end
+</body>
+</html>
