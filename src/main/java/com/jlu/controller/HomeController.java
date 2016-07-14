@@ -48,7 +48,7 @@ public class HomeController {
         return vos;
     }
 
-    //自己定义并注册了一个用户权限拦截器，控制用户这个页面的访问权限,hh
+    //自己定义并注册了一个用户权限拦截器，控制用户这个页面的访问权限,试试github
     @RequestMapping(path = {"/setting"},method = {RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
     public String setting(Model model){
