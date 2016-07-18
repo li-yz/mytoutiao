@@ -1,6 +1,7 @@
 package com.jlu.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +16,18 @@ import java.util.Map;
  */
 public class ToutiaoUtil {
     private static final Logger logger = LoggerFactory.getLogger(ToutiaoUtil.class);
+
+    public static String TOUTIAO_DOMAIN = "http://127.0.0.1:8080/";
+    public static String IMAGE_DIR = "D:/toutiaoupload/";
+    public static String [] IMAGE_FILE_EXT = new String[]{"png","bmp","jpg","jpeg"};
+    public static boolean isFileAllowed(String fileExt){
+        for(String ext : IMAGE_FILE_EXT){
+            if(StringUtils.equals(ext,fileExt)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     /* MD5加密算法，自定义成工具类的一个方法
     * */
